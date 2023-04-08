@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pop Quiz Coding Challenge</title>
-</head>
-<body>
-    <header class ="Welcome">
-        <h3 class ="time"></h3>
-        <div class = "opening">
-            <h1 class ="start-box">Coding Pop Quiz</h1>
-            <p>Welcome to the the JavaScript Pop Quiz!<br> 
-            Try to answer the following questions as best you can within the time frame alloted.<br>
-            For every question you get wrong, 10 seconds will be taken off the timer at the top right.<br>
-            Try as many times as you want to see if you can beat your previous High Score!<br>
-            Good luck!</p>
-        </div>
-        <div id="start-button">
-            <button>Start</button>
-        </div>
+  </head>
+  <body>
+    <header>
+      <h3 class="timer-count">Time Left:</h3>
+      <h3 class="high-scores">High Scores</h3>
     </header>
 
-    <main class ="the-game">
-        <div class ="question-text"></div>
-        <div class ="question-options">
-            <p>Option 1<br></p>
-            <p>Option 2<br></p> 
-            <p>Option 3<br></p>    
-            <p>Option 4<br></p>
-        </div>
+    <main class="the-game">
+      <div class="opening">
+        <h1 class="start-box">Coding Pop Quiz</h1>
+        <p>
+          Welcome to the the JavaScript Pop Quiz!<br />
+          Try to answer the following questions as best you can within the time
+          frame alloted.<br />
+          For every question you get wrong, 10 seconds will be taken off the
+          timer at the top right.<br />
+          Try as many times as you want to see if you can beat your previous
+          High Score!<br />
+          Good luck!
+        </p>
+      </div>
+        <button id="start-button">Start</button>
+      <div class="question-text"></div>
+      <div class="question-options">
+        <p>Option 1<br /></p>
+        <p>Option 2<br /></p>
+        <p>Option 3<br /></p>
+        <p>Option 4<br /></p>
+      </div>
     </main>
 
     <script src="develop/quizcode.js"></script>
-</body>
+  </body>
 </html>

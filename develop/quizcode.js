@@ -1,9 +1,14 @@
-var secondsLeft = 10;
-var timeEl = document.querySelector(".time");
-var start = document.querySelector(".start-button")
-var questions = document.querySelector(".question-text")
+var timerCount;
+var timer;
+var timeElement = document.querySelector(".timer-count");
+var highScores = document.querySelector(".high-score")
+var startButton = document.querySelector("#start-button");
+var questionText = document.querySelector(".question-text");
+var questionOptions = document.querySelector(".question-options");
 
-class questions {
+
+
+class Question{
     constructor(question, option1, option2, option3, option4){
         this.question = question;
         this.option1 = option1;
@@ -15,44 +20,80 @@ class questions {
 
 var quiz = [];
 
-var question1 = newQuestion("Which of the following is a JavaScript Data type?", "Number", "String", "Boolean", "All of the above");
+var question1 = new Question("Which of the following is a JavaScript Data type?", "Number", "String", "Boolean", "All of the above");
 
-var question2 = newQuestion("How do you remove the last element from an array?", "Push", "Reverse", "Pop", "Length");
+var question2 = new Question("How do you remove the last element from an array?", "Push", "Reverse", "Pop", "Length");
 
-var question3 = newQuestion("How do you access all the same html elements in JavaScript?", "getElementById", "querySelector", "getElementsByClass", "querySelectorAll");
+var question3 = new Question("How do you access all the same html elements in JavaScript?", "getElementById", "querySelector", "getElementsByClass", "querySelectorAll");
 
-var question4 = newQuestion("What would be the value of 3+6+'9'?", "18", "99", "27", "81");
+var question4 = new Question("What would be the value of 3+6+'9'?", "18", "99", "27", "81");
 
-var question5 = newQuestion("Which of the following is a Looping Structure in JavaScript?", "Do-ForaWhile loops", "Fruity loops", "While loops", "Frosted loops");
+var question5 = new Question("Which of the following is a Looping Structure in JavaScript?", "Do-ForaWhile loops", "Fruity loops", "While loops", "Frosted loops");
 
 quiz = [question1, question2, question3, question4, question5];
 
+console.log(quiz[0]);
+console.log(quiz[1]);
+console.log(quiz[2]);
+console.log(quiz[3]);
+console.log(quiz[4]);
 
 
-
-
-function showQuestion(event) {
+// function showQuestion(event) {
     
+// }
+
+function startQuiz() {
+    timerCount = 60;
+    startTimer()
 }
 
-start.addEventListener("click", function() {
-    if ()
-})
+function startTimer() {
+    var timer = setInterval(function() {
+        timerCount--;
+        timeElement.textContent = "Time Left: " + timerCount;
 
-function setTime() {
-    var timerTotal  = setInterval(function() {
-        secondsLeft--;
-        timeEl.textContent = "Time Left: " + secondsLeft;
-        
-        if (secondsLeft === 0) {
-            clearInterval(timerTotal);
-            sendMessage();
+    if (timerCount >= 0) {
+        if (isWin && timerCount > 0) {
+            clearInterval(timer)
+            // winQuiz();
         }
+    }
+        
+     if (secondsLeft === 0) {
+        clearInterval(timerTotal);
+        // loseQuiz();
+        sendMessage();
+    }
     }, 1000);
-}
+};
 
 function sendMessage() {
-    timeEl.textContent = "Time's Up!";
-}
+    timeElement.textContent = "Time's Up!";
+};
 
-setTime();
+function setsHighScore() {
+    //localStorage.setItems("highScore", highscorecounter)??
+    //set this function to store the time left in the local storage so it can be used to define the high score
+};
+
+function checkWin() {
+    // if (chosenOption === correctAnswer?) {
+    //     isWin = true;
+    // }
+};
+
+function checkAnswers() {
+    //write a function to check what was clicked and see if that was the correct answer, IF not then subtract 10 seconds from the timer and go to next question
+};
+
+questionOptions.addEventListener("click", function(event) {
+    if (timerCount === 0) {
+        return;
+    }
+    //put a variable in here with an array? maybe? that has all the answers to the questions.
+    checkAnswers()
+    checkWin()
+});
+
+startButton.addEventListener("click", startQuiz);
