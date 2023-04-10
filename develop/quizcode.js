@@ -22,7 +22,7 @@ class Question {
     this.option4 = option4;
     this.correctAnswer = correctAnswer;
   }
-}
+};
 
 var quiz = [];
 
@@ -86,17 +86,17 @@ console.log(quiz[4]);
 function startQuiz() {
   currentQuestionId = 0;
   console.log(quiz[currentQuestionId]);
-  timerCount = 1;
+  timerCount = 60;
   startTimer();
   updateQuestion();
   opening.style.display = "none";
   questionOptions.style.display = "block";
-}
+};
 
 function startTimer() {
   timer = setInterval(updateTimer, 1000);
   console.log(timer);
-}
+};
 
 function updateTimer() {
   //   console.log("updating timer");
@@ -119,7 +119,7 @@ function updateTimer() {
     // loseQuiz();
     sendMessage();
   }
-}
+};
 
 function updateQuestion() {
   questionText.innerHTML = quiz[currentQuestionId].question;
@@ -127,27 +127,27 @@ function updateQuestion() {
   option2.innerHTML = quiz[currentQuestionId].option2;
   option3.innerHTML = quiz[currentQuestionId].option3;
   option4.innerHTML = quiz[currentQuestionId].option4;
-}
+};
 
 function sendMessage() {
   timeElement.textContent = "Time's Up!";
   questionOptions.style.display = "none";
-}
+};
 
-function setsHighScore() {
+// function setsHighScore() {
   //localStorage.setItems("highScore", highscorecounter)??
   //set this function to store the time left in the local storage so it can be used to define the high score
-}
+// }
 
-function checkWin() {
+// function checkWin() {
   // if (chosenOption === correctAnswer?) {
   //     isWin = true;
   // }
-}
+// }
 
 function quizFinish() {
     questionOptions.style.display = "none";
-    prompt.
+    // prompt.
 };
 
 function checkAnswers(selectedAnswer) {
@@ -160,7 +160,7 @@ function checkAnswers(selectedAnswer) {
   }
 
   //write a function to check what was clicked and see if that was the correct answer, IF not then subtract 10 seconds from the timer and go to next question
-}
+};
 
 startButton.addEventListener("click", startQuiz);
 
@@ -170,12 +170,12 @@ for (var i = 0; i < answers.length; i++) {
     checkAnswers(buttonText);
     //we need the next question to appear
     currentQuestionId++;
-    if (currentQuestionId > quiz.length()) {
+    if (currentQuestionId > quiz.length) {
 
-    }
+    };
     updateQuestion();
   });
-}
+};
 
 
 //do all css
