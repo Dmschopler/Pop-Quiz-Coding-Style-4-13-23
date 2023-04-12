@@ -1,0 +1,49 @@
+* {
+    border: border-box;
+    background-color: green;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    font-size: 1.25rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.opening {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#start-button {
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: black;
+    font-size: 1.25rem;
+}
+
+#question-text{
+    font: bold;
+    font-size: 1.75rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.quiz-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.question-option {
+    margin: 5px;
+    border-radius: 10px;
+    background-color: black;
+    font-size: 1.25rem;
+    color: rgb(255, 255, 255);
+}

@@ -147,7 +147,7 @@ function sendMessage() {
 
 function quizFinish() {
     questionOptions.style.display = "none";
-    // prompt.
+    // prompt("Congratulations! You finished the quiz! Enter your initials.")
 };
 
 function checkAnswers(selectedAnswer) {
@@ -171,12 +171,10 @@ for (var i = 0; i < answers.length; i++) {
     //we need the next question to appear
     currentQuestionId++;
     if (currentQuestionId > quiz.length) {
-
     };
     updateQuestion();
   });
 };
-
 
 //do all css
 //set local storage for high scores

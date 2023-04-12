@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pop Quiz Coding Challenge</title>
+    <link rel="stylesheet" type="text/css" href="./develop/style.css">
   </head>
   <body>
     <header>
-      <h3 class="timer-count">Time Left:</h3>
-      <h3 class="high-scores">High Scores</h3>
+            <h3 class="high-scores">High Scores</h3>
+            <h3 class="timer-count">Time Left:</h3>
     </header>
 
     <main class="the-game">
@@ -27,6 +28,7 @@
         </p>
         <button id="start-button">Start</button>
       </div>
+      <div class="quiz-display">
       <div id="question-options">
         <div id="question-text"></div>
         <button class="question-option" id="option1">Option 1</button><br/>
@@ -34,6 +36,7 @@
         <button class="question-option" id="option3">Option 3</button><br/>
         <button class="question-option" id="option4">Option 4</button><br/>
       </div>
+    </div>
     </main>
 
     <script src="develop/quizcode.js"></script>
