@@ -7,4 +7,4 @@ This website was created to give people the opportunity to test their knowledge 
 ![Alt text](assets/Pop-Quiz-Screenshot.png)
 ## URL of Deployed Link
 
-https://dmschopler.github.io/New-Password-Generator-4-6-23/
+https://dmschopler.github.io/Pop-Quiz-Coding-Style-4-13-23/
