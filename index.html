@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pop Quiz Coding Challenge</title>
+    <link rel="stylesheet" type="text/css" href="./develop/style.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="high-scores">
+        <li><h3>High Score</h3></li>
+        <li id="score">test</li>
+      </ul>
+      <h3 class="timer-count">Time Left:</h3>
+    </header>
+
+    <main class="the-game">
+      <div class="opening">
+        <h1 class="start-box">Coding Pop Quiz</h1>
+        <p>
+          Welcome to the the JavaScript Pop Quiz!<br />
+          Try to answer the following questions as best you can within the time
+          frame alloted.<br />
+          For every question you get wrong, 10 seconds will be taken off the
+          timer at the top right.<br />
+          Try as many times as you want to see if you can beat your previous
+          High Score!<br />
+          Good luck!
+        </p>
+        <button id="start-button">Start</button>
+      </div>
+      <div class="quiz-display">
+        <div id="question-options">
+          <div id="question-text"></div>
+          <button class="question-option" id="option1">Option 1</button><br />
+          <button class="question-option" id="option2">Option 2</button><br />
+          <button class="question-option" id="option3">Option 3</button><br />
+          <button class="question-option" id="option4">Option 4</button><br />
+        </div>
+      </div>
+      <div class="finish" id="ending">
+        <h3>Quiz Finished</h3>
+        <button class="replay" id="replay">Replay</button>
+      </div>
+    </main>
 
     <script src="develop/quizcode.js"></script>
-</body>
+  </body>
 </html>
