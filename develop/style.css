@@ -1,6 +1,6 @@
 * {
     border: border-box;
-    background-color: green;
+    background-color: lightblue;
 }
 
 header {
@@ -9,6 +9,12 @@ header {
     margin: 10px;
     font-size: 1.25rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.high-scores {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
 }
 
 .opening {
@@ -26,11 +32,19 @@ header {
     font-size: 1.25rem;
 }
 
-#question-text{
+#question-text {
     font: bold;
     font-size: 1.75rem;
     margin-top: 10px;
     margin-bottom: 5px;
+}
+
+.finish {
+    border-radius: 10px;
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .quiz-display {
@@ -38,6 +52,14 @@ header {
     flex-direction: column;
     align-items: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.replay {
+    margin: 5px;
+    border-radius: 10px;
+    background-color: black;
+    font-size: 1.25rem;
+    color: rgb(255, 255, 255);
 }
 
 .question-option {

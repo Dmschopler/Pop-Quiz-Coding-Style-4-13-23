@@ -7,11 +7,15 @@ var questionText = document.querySelector("#question-text");
 var questionOptions = document.querySelector("#question-options");
 var opening = document.querySelector(".opening");
 questionOptions.style.display = "none";
+ending.style.display = "none";
 var answer1 = document.querySelector("#option1");
 var answer2 = document.querySelector("#option2");
 var answer3 = document.querySelector("#option3");
 var answer4 = document.querySelector("#option4");
 var answers = document.querySelectorAll(".question-option");
+var score = 0;
+document.getElementById("score").textContent =
+  localStorage.getItem("highScore");
 
 class Question {
   constructor(question, option1, option2, option3, option4, correctAnswer) {
@@ -34,9 +38,6 @@ var question1 = new Question(
   "All of the above",
   "All of the above"
 );
-
-console.log(question1.question);
-console.log(question1.option3);
 
 var question2 = new Question(
   "How do you remove the last element from an array?",
@@ -77,12 +78,6 @@ var question5 = new Question(
 quiz = [question1, question2, question3, question4, question5];
 var currentQuestionId;
 
-console.log(quiz[0]);
-console.log(quiz[1]);
-console.log(quiz[2]);
-console.log(quiz[3]);
-console.log(quiz[4]);
-
 function startQuiz() {
   currentQuestionId = 0;
   console.log(quiz[currentQuestionId]);
@@ -90,34 +85,21 @@ function startQuiz() {
   startTimer();
   updateQuestion();
   opening.style.display = "none";
+  ending.style.display = "none";
   questionOptions.style.display = "block";
 };
 
 function startTimer() {
   timer = setInterval(updateTimer, 1000);
-  console.log(timer);
 };
 
 function updateTimer() {
-  //   console.log("updating timer");
   timerCount--;
   timeElement.textContent = "Time Left: " + timerCount;
 
-  if (timerCount >= 0) {
-    // console.log("more time left");
-    if (isWin && timerCount > 0) {
-      clearInterval(timer);
-      // winQuiz();
-    }
-  }
-
   if (timerCount <= 0) {
-    console.log("stopping Timer");
-    console.log(timer);
-
-    clearInterval(timer);
-    // loseQuiz();
     sendMessage();
+    clearInterval(timer);
   }
 };
 
@@ -132,22 +114,18 @@ function updateQuestion() {
 function sendMessage() {
   timeElement.textContent = "Time's Up!";
   questionOptions.style.display = "none";
+  ending.style.display = "flex";
 };
 
-// function setsHighScore() {
-  //localStorage.setItems("highScore", highscorecounter)??
-  //set this function to store the time left in the local storage so it can be used to define the high score
-// }
-
-// function checkWin() {
-  // if (chosenOption === correctAnswer?) {
-  //     isWin = true;
-  // }
-// }
-
-function quizFinish() {
-    questionOptions.style.display = "none";
-    // prompt("Congratulations! You finished the quiz! Enter your initials.")
+function endGame() {
+  if (timerCount > localStorage.getItem("highScore")) {
+    localStorage.setItem("highScore", timerCount);
+  }
+  document.getElementById("score").textContent =
+    localStorage.getItem("highScore");
+  timerCount = 0;
+  questionOptions.style.display = "none";
+  ending.style.display = "flex";
 };
 
 function checkAnswers(selectedAnswer) {
@@ -156,28 +134,24 @@ function checkAnswers(selectedAnswer) {
     console.log("correct");
   } else {
     console.log("incorrect");
-    timerCount-=10;
+    timerCount -= 10;
   }
-
-  //write a function to check what was clicked and see if that was the correct answer, IF not then subtract 10 seconds from the timer and go to next question
 };
 
 startButton.addEventListener("click", startQuiz);
+replay.addEventListener("click", startQuiz);
 
 for (var i = 0; i < answers.length; i++) {
   answers[i].addEventListener("click", function () {
     var buttonText = this.textContent;
     checkAnswers(buttonText);
-    //we need the next question to appear
     currentQuestionId++;
     if (currentQuestionId > quiz.length) {
-    };
-    updateQuestion();
+    }
+    if (currentQuestionId < 5) {
+      updateQuestion();
+    } else {
+      endGame();
+    }
   });
-};
-
-//do all css
-//set local storage for high scores
-//handle finishing quiz
-//add a prompt for highscore name
-//add replay button
+}
